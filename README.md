@@ -24,7 +24,7 @@
 ## 🎲 Cómo usarlo
 
 1. Ingresa en este enlace:
-   https://portafolio-nine-plum-61.vercel.app/
+   https://pagina-web-yhoni-alucin0-2.vercel.app/
 2. Ve mi informacion
 3. Desplazate entre secciones con la navbar
 4. Listo! ahora Ya! me conoces
