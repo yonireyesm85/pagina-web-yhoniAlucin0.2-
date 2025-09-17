@@ -1,0 +1,189 @@
+/* # estilos css */
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-primario:#27667B;
+    --color-secundario:#6196a6;
+    --color-terciario:#a4ce95;
+    --color-hover:#272727;
+
+    --fuente-montserrat:'Montserrat', sans-serif;
+    --fuente-krona:"Krona One", sans-serif;
+}
+
+* { /*Elemento global Reset antes de comenzar a estilizar nuestros elementos*/ 
+    padding: 0;
+    margin: 0;
+} 
+
+body {
+    /* Dividimos el body en dos colores */
+       background: linear-gradient(
+           to bottom,       /* dirección vertical */
+           #27667B 0%,      /* color superior */
+           #27667B 90%,     /* llega hasta 3/4 de la pantalla */
+           #A0C878 90%,     /* empieza color inferior */
+           #A0C878 100%     /* termina en el fondo */
+       );
+    color: var(--color-secundario);
+    /* height: 100vh; Body utiliza todo el tamaño de la pagina height*/
+    box-sizing: border-box; /*Para que los elementos hijos no se salgan del padre margin*/
+}
+
+/* Header distinto del body */
+.header {
+    background-color: #143D60; /* color del header */
+    padding: 20px 15%; /* espacio arriba y abajo */
+    display: flex;
+    justify-content: flex-end; /* Imagen al lado derecho */
+    align-items: center; /* Imagen centrada verticalmente */
+}
+
+/* Imagen dentro del header */
+.header__imagen {
+    width: 280px; /* ajusta según tu imagen */
+    height: auto;
+    margin-right: 20px;
+}
+
+.header__menu {
+    display: flex;
+    gap: 160px;
+    justify-content: center; /* centra horizontalmente la nav */
+    padding: 15px 0; /* espacio arriba y abajo */
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.header__menu__link:hover {
+    color: var(--color-hover);
+    transition: color 0.3s ease;
+}
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    padding: 6% 15%;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto {
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion__enlaces {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px; /* para poner espacio entre los items */
+}
+
+.presentacion__enlaces_subtitulo {
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link {
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none; /*Para sacar la linea debajo de las letras del enlace*/
+    color: var(--color-terciario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+    transition: color 0.3s ease;
+}
+
+.presentacion__imagen {
+    width: 50%;  /* Ancho de la imagen */
+    height: 50%; /*Alto de la imagen */
+    object-fit: cover; /*Ajusta la imagen sin deformarla */
+}
+
+.presentacion__contenido__texto a{
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+/* Solo para enlaces dentro de la sección de Educación */
+.presentacion__contenido__texto.educacion a {
+    color: #143D60; /* color oscuro para legibilidad */
+    text-decoration: underline; /* opcional, para que parezca un enlace */
+}
+
+.presentacion__contenido__texto.educacion a:hover {
+    color: #272727; /* cambio de color al pasar el mouse */
+}
+
+
+.footer {
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: relative;
+        bottom: 0;
+        width: 100%;
+}
+
+@media (max-width:1250px) {
+    .header {
+        padding: 10%;
+    }
+    .header__menu {
+        justify-content: center;
+    }
+    .presentacion {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion__contenido {
+        width: auto;
+    }
+
+     /* Cambiar color de letras del enlace de WhatsApp en pantallas pequeñas */
+        .presentacion__enlaces__link[href*="wa.me"] {
+            color: #27667B; /* color azul oscuro */
+        }
+}
