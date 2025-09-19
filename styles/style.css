@@ -166,24 +166,51 @@ body {
         width: 100%;
 }
 
-@media (max-width:1250px) {
+/* Ajustes para pantallas grandes hasta medianas */
+@media (max-width: 1250px) {
     .header {
         padding: 10%;
     }
-    .header__menu {
-        justify-content: center;
-    }
+
     .presentacion {
         flex-direction: column-reverse;
         padding: 5%;
     }
-
     .presentacion__contenido {
         width: auto;
     }
 
-     /* Cambiar color de letras del enlace de WhatsApp en pantallas pequeñas */
-        .presentacion__enlaces__link[href*="wa.me"] {
-            color: #27667B; /* color azul oscuro */
-        }
+    /* Cambiar color del enlace de WhatsApp en pantallas medianas */
+    .presentacion__enlaces__link[href*="wa.me"] {
+        color: #27667B; /* azul oscuro */
+    }
 }
+
+/* Ajustes para tablet y móviles */
+@media (max-width: 900px) {
+    .header__imagen {
+        width: 70%;
+        max-width: 250px; /* control extra para que no se haga gigante */
+        height: auto;
+        margin: 0 auto; /* centra la imagen */
+        display: block;
+    }
+}
+
+/* Ajustes para celulares pequeños */
+@media (max-width: 600px) {
+    .header {
+        position: relative; /* para que la imagen se posicione respecto al header */
+        padding-top: 20px; /* espacio superior si quieres */
+    }
+
+    .header__imagen {
+        position: absolute; /* permite moverla a la esquina */
+        top: 0;             /* pegada al techo del header */
+        right: 0;           /* pegada a la derecha */
+        width: 40%;         /* más pequeña */
+        max-width: 120px;   /* control extra para que no se haga gigante */
+        height: auto;       /* mantiene proporciones */
+    }
+}
+
