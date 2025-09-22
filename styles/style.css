@@ -172,6 +172,10 @@ body {
         padding: 10%;
     }
 
+     .header__menu {
+            justify-content: center;
+        }
+
     .presentacion {
         flex-direction: column-reverse;
         padding: 5%;
