@@ -173,12 +173,22 @@ body {
 /* Ajustes para pantallas grandes hasta medianas */
 @media (max-width: 1250px) {
     .header {
-        padding: 10%;
+        display: flex;
+        justify-content: space-between; /* menú a la izq, imagen a la der */
+        align-items: center;
+        padding: 5% 10%;
     }
 
     .header__menu {
-        justify-content: center;
+        justify-content: flex-start; /* alinea menú a la izquierda */
         gap: 30px;
+    }
+
+    .header__imagen {
+        margin-left: auto; /* empuja la imagen a la derecha */
+        display: block;
+        width: 150px;
+        height: auto;
     }
 
     .presentacion {
@@ -200,12 +210,18 @@ body {
 
 /* Ajustes para tablets */
 @media (max-width: 900px) {
+    .header {
+        padding: 20px;
+    }
+
+    .header__menu {
+        justify-content: flex-start;
+    }
+
     .header__imagen {
-        width: 70%;
-        max-width: 250px;
+        width: 120px;
         height: auto;
-        margin: 0 auto;
-        display: block;
+        margin-left: auto; /* mantiene a la derecha */
     }
 }
 
@@ -229,7 +245,7 @@ body {
         width: 40%;
         max-width: 120px;
         height: auto;
-        margin-bottom: 10px;
+        margin: 10px auto 0 auto; /* centrada en móvil */
     }
 
     .presentacion {
