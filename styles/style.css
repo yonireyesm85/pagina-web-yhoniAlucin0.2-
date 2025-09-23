@@ -38,6 +38,8 @@ body {
     display: flex;
     justify-content: flex-end; /* Imagen al lado derecho */
     align-items: center; /* Imagen centrada verticalmente */
+    /* 👇 aquí controlamos la altura */
+        min-height: 5rem;   /* siempre tendrá al menos 5cm de alto */
 }
 
 /* Imagen dentro del header */
@@ -166,30 +168,18 @@ body {
         width: 100%;
 }
 
-/* ===============================
-   MEDIA QUERIES
-   =============================== */
+
 
 /* Ajustes para pantallas grandes hasta medianas */
 @media (max-width: 1250px) {
     .header {
-        display: flex;
-        justify-content: space-between; /* menú a la izq, imagen a la der */
-        align-items: center;
-        padding: 5% 10%;
-    }
+            padding: 10px 5%;  /* menos padding en pantallas medianas */
+            min-height: 2rem;  /* un poco más compacto */
+        }
 
-    .header__menu {
-        justify-content: flex-start; /* alinea menú a la izquierda */
-        gap: 30px;
-    }
-
-    .header__imagen {
-        margin-left: auto; /* empuja la imagen a la derecha */
-        display: block;
-        width: 150px;
-        height: auto;
-    }
+   .header__menu {
+            justify-content: center;
+        }
 
     .presentacion {
         flex-direction: column-reverse;
@@ -203,59 +193,10 @@ body {
 
     /* Cambiar color del enlace de WhatsApp en pantallas medianas */
     .presentacion__enlaces__link[href*="wa.me"] {
-        color: #27667B; /* azul oscuro */
+        color: #27667B;  /* azul oscuro */
         border-color: #27667B;
     }
 }
 
-/* Ajustes para tablets */
-@media (max-width: 900px) {
-    .header {
-        padding: 20px;
-    }
 
-    .header__menu {
-        justify-content: flex-start;
-    }
 
-    .header__imagen {
-        width: 120px;
-        height: auto;
-        margin-left: auto; /* mantiene a la derecha */
-    }
-}
-
-/* Ajustes para celulares pequeños */
-@media (max-width: 600px) {
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .header__menu {
-        flex-direction: column;   /* ahora menú en columna */
-        align-items: center;
-        gap: 15px;
-        margin-top: 15px;
-    }
-
-    .header__imagen {
-        position: relative;
-        width: 40%;
-        max-width: 120px;
-        height: auto;
-        margin: 10px auto 0 auto; /* centrada en móvil */
-    }
-
-    .presentacion {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .presentacion__enlaces {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-}
