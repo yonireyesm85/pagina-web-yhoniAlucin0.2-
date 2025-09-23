@@ -174,7 +174,7 @@ body {
 @media (max-width: 1250px) {
     .header {
             padding: 10px 5%;  /* menos padding en pantallas medianas */
-            min-height: 2rem;  /* un poco más compacto */
+            min-height: 3rem;  /* un poco más compacto */
         }
 
    .header__menu {
@@ -195,6 +195,55 @@ body {
     .presentacion__enlaces__link[href*="wa.me"] {
         color: #27667B;  /* azul oscuro */
         border-color: #27667B;
+    }
+}
+
+/* Ajustes para tablets */
+@media (max-width: 900px) {
+    .header {
+        padding: 8px 5%;
+        min-height: 2.8rem;
+    }
+
+    .header__menu {
+        display: flex;
+        justify-content: center; /* se mantiene centrado */
+        gap: 15px;
+    }
+
+    .presentacion {
+        padding: 20px;
+    }
+}
+
+/* Ajustes para celulares pequeños */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start; /* contenido pegado a la izquierda */
+        padding: 6px 5%;
+        min-height: 2.5rem;
+    }
+
+    .header__menu {
+        display: flex;
+        flex-direction: column;   /* menú en columna */
+        align-items: flex-start;  /* alineado a la izquierda */
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%;
+        padding-left: 10px; /* separación del borde */
+    }
+
+    .presentacion {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .presentacion__enlaces {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 }
 
